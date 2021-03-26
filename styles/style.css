@@ -14,7 +14,12 @@ p {
   font-weight: 300;
 }
 
+li  {
+  background-color: linen;
+}
+
 /* Dropdown Button */
+
 button, .dropbtn {
     background-color: #04548a;
     color: white;

@@ -4,6 +4,9 @@ const text = window.location.hash.substring(1);
 console.log(text);
 document.title = text + ' - Shot Hero';
 
+let H1 = document.getElementById('choice');
+H1.innerText = 'Shot Hero - ' + text;
+
 let xhttps = new XMLHttpRequest();
 // const url = "http://jservice.io/api/random";
 const url = "https://www.vaccinespotter.org/api/v0/states.json";
@@ -27,14 +30,12 @@ function displayData(data) {
     let holder = document.getElementById('holder');
     let parent = document.getElementById('statedata');
     let node = document.createElement("LI");
-    console.log('the state is ' + text);
-    drop.appendChild(node).appendChild;
-    drop.innerHTML = 'The selected text is ' + text;
+    // drop.appendChild(node).appendChild;
     for (let i=0; i<data.length; ++i) {
         state = data[i];
         if (state.name == text) {
             for (let prop in state) {
-                string = `The state ${prop} is ${state[prop]}`;
+                string = `${text}'s ${prop} is ${state[prop]}`;
                 let textnode = document.createTextNode(string);  
                 node.appendChild(textnode);   
                 parent.appendChild(node);     
@@ -46,14 +47,6 @@ function displayData(data) {
     }
 }
 
-function selectData () {
-    document.getElementById('submit').onclick = function() {
-        let e = document.getElementById("state");
-        let text = e.options[e.selectedIndex].text;
-        document.getElementById("container").innerHTML = 'The selected text is ' + text;
-        window.location.href="statepage.html";
-    }
-}
   
 getData();
 

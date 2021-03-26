@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shot Hero</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+    <body>
+        <header>
+            <div class="navbar__container">
+                <a class="navbar__item" href="index.html"></a>
+                <a>|</a>
+                <a class="navbar__item">About</a>
+            </div>
+        </header>
+        
+        <div>   
+            <h1>Shot Hero</h1>
+            <p>
+                This site will allow you to find information regarding vaccinations for COVID-19 in near-real-time.  Select your state to find your regional information.
+            </p>
+           
+            <div id="container">
+            </div>
+            <br>
+        </div>
+        
+        
+        
+        <div class="dropdown">
+            <button onclick="dropMenu()" class="dropbtn">Click here for the list of states</button>
+            <div id="dropdown" class="dropdown-content">
+
+              <!-- <a href="#">Link 1</a> -->
+            </div>
+          </div> 
+          <br>
+          <button id="submit" href='statepage.html'>Go to selected state's data</button>
+          
+          <!-- <div class='selection'></div> -->
+
+        <script src="js/hero.js"></script>
+    </body>
+</html>

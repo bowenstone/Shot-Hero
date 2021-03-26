@@ -1,0 +1,96 @@
+*   {
+    box-sizing: border-box;
+}
+h1, h2  {
+    margin: 2%;
+    font-variant: inherit;
+    color: purple;
+}
+
+p {
+  margin: 2%;
+  margin-right: 10%;
+  background-color: linen;
+  font-weight: 300;
+}
+
+/* Dropdown Button */
+button, .dropbtn {
+    background-color: #04548a;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: Lora;
+    border-radius: 7%;
+    margin: 2%;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3092d3;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    /* display: inline-block; */
+  }
+  
+  /* Dropdown Content label (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(216, 206, 192);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* .dropdown-content {
+      background-color: #ddd;
+      font-size: inherit;
+  } */
+
+/* Show the dropdown menu */
+.show {
+    display:block;
+}
+
+/* techiedelight.com */
+
+label {
+    font-size: 1.2rem;
+    font-family: Lora;
+    padding-right: 10px;
+  }
+
+select {
+  font-size: 1.1rem;
+  padding: 2px 15px;
+}
+  
+  /* button,
+  select {
+    font-size: .9rem;
+    padding: 2px 5px;
+  } */
+  
+
+
+/* 
+********************
+*/
+
+/* button{
+    border-radius: 20%;
+    font-family: cursive;
+    background-color: cornsilk;
+    color: blueviolet;
+    padding: 2%;
+    margin: 2%;
+} */
+/* button:hover{
+background-color: rgb(16, 214, 16)
+} */

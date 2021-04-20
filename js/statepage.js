@@ -1,11 +1,11 @@
+// 'use strict';
 console.log('and again...');
-
-const text = window.location.hash.substring(1);
-console.log(text);
+const text = decodeURI(window.location.hash.substring(1));
 document.title = text + ' - Shot Hero';
+console.log(text);
 
 let H1 = document.getElementById('choice');
-H1.innerText = 'Shot Hero - ' + text;
+H1.innerText = ' Shot Hero for ' + text;
 
 let xhttps = new XMLHttpRequest();
 // const url = "http://jservice.io/api/random";
@@ -16,37 +16,41 @@ function getData () {
     xhttps.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200)  {
             let data = JSON.parse(this.responseText);
-            displayData(data);
+            displayState(getState(data));
             console.log(data);
         }
     }
     xhttps.send();
 }
 
-function displayData(data) {
+function getState(data) {
     let state;
-    let string;
-    let drop = document.getElementById('container');
-    let holder = document.getElementById('holder');
-    let parent = document.getElementById('statedata');
-    let node = document.createElement("LI");
-    // drop.appendChild(node).appendChild;
     for (let i=0; i<data.length; ++i) {
         state = data[i];
         if (state.name == text) {
-            for (let prop in state) {
-                string = `${text}'s ${prop} is ${state[prop]}`;
-                let textnode = document.createTextNode(string);  
-                node.appendChild(textnode);   
-                parent.appendChild(node);     
-                console.log(`${prop} is ${state[prop]}`);
-            }
-            console.log(i, state.code, state.name, state.provider_brands[0].name);
-            break;
+            return state;
         }
     }
 }
+ 
+function displayState(state) {
+    let list = '';
+    let brand;
+    list += `<li> ${state.name} has ${new Intl.NumberFormat().format(state.store_count)} stores offering the vaccination.  These include... </li>`;
+    for (let i=0; i< state.provider_brands.length; ++i) {
+        brand = state.provider_brands[i];
+        list += `<li class='brand'>${i+1} - ${brand.name} with ${brand.location_count}  `;
+        if (brand.location_count == 1)  {
+            list += `location<li>`;
+        }   else    {
+            list += `locations<li>`;
+        }
+        list += `<li class='appt'>To make an appointment at ${brand.name}, go to...  <br><a  href=${brand.url}> ${brand.url}</a></li>`
+    }
+    document.getElementById('statedata').innerHTML = `<ul> ${list} </ul>`;
+    console.log(state.code, state.name, state.provider_brands[0].name);
+    return state;
+}
 
-  
 getData();
 

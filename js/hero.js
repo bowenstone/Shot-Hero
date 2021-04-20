@@ -17,16 +17,15 @@ function getData () {
 
 function showlist(select)  {
     let label = document.createElement("label");
-    label.innerHTML = "Select a state from the dropdown list ...  >>   ";
+    label.innerHTML = "Select a state here...  >>   ";
     label.htmlFor = "state";
     document.getElementById("dropdown").appendChild(label).appendChild(select);
  }
 
 function selectData () {
     document.getElementById('submit').onclick = function() {
-        let e = document.getElementById("state");
-        let text = e.options[e.selectedIndex].text;
-        // document.getElementById("container").innerHTML = 'The selected text is ' + text;
+        let state = document.getElementById("state");
+        let text = state.options[state.selectedIndex].text;
         window.location.href="statepage.html#"+text;
     }
 }

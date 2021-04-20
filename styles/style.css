@@ -9,13 +9,34 @@ h1, h2  {
 
 p {
   margin: 2%;
-  margin-right: 10%;
+  max-width: 720px;
   background-color: linen;
   font-weight: 300;
 }
 
+ul {
+  list-style-type: none;
+  margin: 2%;
+  max-width: 720px;
+  padding: 0; 
+}
+
 li  {
   background-color: linen;
+}
+
+a, a:visited {
+  color: blue;
+  text-decoration: underline
+}
+
+.brand {
+  color:rgb(49, 65, 22);
+  padding: 1% 0 0 0;
+}
+
+.appt {
+  padding: 0 0 1% 8%;
 }
 
 /* Dropdown Button */
@@ -32,8 +53,8 @@ button, .dropbtn {
     margin: 2%;
   }
   
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
+  /* Selected button on hover & focus */
+ button:hover, .button:focus {
     background-color: #3092d3;
   }
   
@@ -41,39 +62,41 @@ button, .dropbtn {
   .dropdown {
     position: relative;
     /* display: inline-block; */
+    font-size: 1.2rem;
+    font-family: Lora;
+    /* padding-right: 1px; */
+    margin-left: 2px;
   }
   
-  /* Dropdown Content label (Hidden by Default) */
   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(216, 206, 192);
-    min-width: 160px;
+    /* display: none;       Dropdown Content label (Hidden by Default) 
+    font-size: inherit; */
+    position: relative;
+    background-color: #d9f7fc;
+    min-width: 10px;
+    max-width: 469px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    margin: 5% 2% 2%;
+    padding: 4px 0 0;
   }
-  
-  /* .dropdown-content {
-      background-color: #ddd;
-      font-size: inherit;
-  } */
 
 /* Show the dropdown menu */
-.show {
+/* .show {
     display:block;
-}
+} */
 
 /* techiedelight.com */
-
 label {
     font-size: 1.2rem;
     font-family: Lora;
-    padding-right: 10px;
+    margin-left: 2%;
   }
 
 select {
   font-size: 1.1rem;
-  padding: 2px 15px;
+  padding: 2px 10px 4px 2px;
+  margin: 0;
 }
   
   /* button,
@@ -81,13 +104,9 @@ select {
     font-size: .9rem;
     padding: 2px 5px;
   } */
-  
-
-
 /* 
 ********************
 */
-
 /* button{
     border-radius: 20%;
     font-family: cursive;
